@@ -6,10 +6,10 @@ using System.Threading.Tasks;
 
 namespace IDFOpertion.Models
 {
-    public abstract class AttackTools
+    public abstract class CombatTool
     {
-        string TypeBomb;
-        string EffectiveAgainst;
-        int AvailableAttacks;
+        public string TypeBomb;
+        public string EffectiveAgainst;
+        public int AvailableAttacks;
     }
 }
