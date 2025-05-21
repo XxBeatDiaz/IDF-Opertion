@@ -7,7 +7,7 @@ using IDFOpertion.Models;
 
 namespace IDFOpertion.Models
 {
-    public class Hermes460Drone : CombatTools
+    public class Hermes460Drone : CombatTool
     {
 
         public Hermes460Drone()
