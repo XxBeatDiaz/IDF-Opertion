@@ -12,5 +12,12 @@ namespace IDFOpertion
         int DateOfEstablishment;
         string CurrentCensus;
         List<object> ListOfTerrorists;
+
+        public Hamas(int dateOfEstablishment, string currentCensus, List<object> listOfTerrorists)
+        {
+            DateOfEstablishment = dateOfEstablishment;
+            CurrentCensus = currentCensus;
+            ListOfTerrorists = listOfTerrorists;
+        }
     }
 }
