@@ -9,13 +9,13 @@ namespace IDFOpertion.Models
 {
     public class AMAN
     {
-        protected List<object> SpecificTerrorist;
-        protected double LastKnownLocationOfTerrorist;
-        protected double IntelligenceCollectionTimestamp;
+        protected List<Terrorist> SpecificTerrorist;
+        protected List<string> LastKnownLocationOfTerrorist;
+        protected List<double> IntelligenceCollectionTimestamp;
 
-        public AMAN(List<object> specificTerrorist,
-            double lastKnownLocationOfTerrorist,
-            double intelligenceCollectionTimestamp)
+        public AMAN(List<Terrorist> specificTerrorist,
+            List<string> lastKnownLocationOfTerrorist,
+            List<double> intelligenceCollectionTimestamp)
         {
             SpecificTerrorist = specificTerrorist;
             LastKnownLocationOfTerrorist = lastKnownLocationOfTerrorist;
