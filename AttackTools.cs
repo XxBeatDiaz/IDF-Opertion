@@ -6,7 +6,10 @@ using System.Threading.Tasks;
 
 namespace IDFOpertion
 {
-    class AttackTools
+    public abstract class AttackTools
     {
+        string TypeBomb;
+        string EffectiveAgainst;
+        int AvailableAttacks;
     }
 }
