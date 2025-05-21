@@ -1,4 +1,6 @@
-﻿namespace IDFOpertion
+﻿using IDFOpertion.Models;
+
+namespace IDFOpertion
 {
     class Program
     {

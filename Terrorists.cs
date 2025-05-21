@@ -6,14 +6,14 @@ using System.Threading.Tasks;
 
 namespace IDFOpertion.Models
 {
-    public class Terrorists
+    public class Terrorist
     {
         string Name;
         int Rank;
         string LifeStatus;
-        string Weapon;
+        string[] Weapon;
 
-        public Terrorists(string name, int rank, string lifeStatus, string weapon)
+        public Terrorist(string name, int rank, string lifeStatus, string[] weapon)
         {
             Name = name;
             Rank = rank;
