@@ -11,5 +11,12 @@ namespace IDFOpertion
         string TypeBomb;
         string EffectiveAgainst;
         int AvailableAttacks;
+
+        public AttackTools(string typeBomb, string effectiveAgainst, int availableAttacks)
+        {
+            TypeBomb = typeBomb;
+            EffectiveAgainst = effectiveAgainst;
+            AvailableAttacks = availableAttacks;
+        }
     }
 }
