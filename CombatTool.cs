@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace IDFOpertion.Models
 {
-    public abstract class CombatTools
+    public abstract class CombatTool
     {
         public string TypeBomb;
         public string EffectiveAgainst;
