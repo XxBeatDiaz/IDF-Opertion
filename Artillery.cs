@@ -10,7 +10,7 @@ namespace IDFOpertion.Models
 {
     public class Artillery : CombatTool
     {
-        private bool SimultaneousAttack;
+        public bool SimultaneousAttack;
 
         public Artillery()
         {

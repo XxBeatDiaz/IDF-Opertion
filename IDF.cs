@@ -11,7 +11,7 @@ namespace IDFOpertion.Models
     {
         protected int DateOfEstablishment;
         protected string CurrentCensus;
-        List<object> CollectionOfAttackOptions;
+        public List<object> CollectionOfAttackOptions;
 
         public IDF(int dateOfEstablishment, string currentCensus, List<object> collectionOfAttackOptions)
         {
