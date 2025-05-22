@@ -17,7 +17,6 @@ namespace IDFOpertion.Models
             List<Terrorist> specificTerrorist,
             List<string> lastKnownLocation,
             List<double> timeStamp)
-
         {
             SpecificTerrorist = specificTerrorist;
             LastKnownLocation = lastKnownLocation;
