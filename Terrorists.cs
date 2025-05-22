@@ -8,10 +8,10 @@ namespace IDFOpertion.Models
 {
     public class Terrorist
     {
-        string Name;
-        int Rank;
-        string LifeStatus;
-        string[] Weapon;
+        public string Name;
+        public int Rank;
+        public string LifeStatus;
+        public string[] Weapon;
 
         public Terrorist(string name, int rank, string lifeStatus, string[] weapon)
         {
