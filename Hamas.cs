@@ -11,9 +11,9 @@ namespace IDFOpertion.Models
     {
         int DateOfEstablishment;
         string CurrentCensus;
-        List<object> ListOfTerrorists;
+        List<Terrorist> ListOfTerrorists;
 
-        public Hamas(int dateOfEstablishment, string currentCensus, List<object> listOfTerrorists)
+        public Hamas(int dateOfEstablishment, string currentCensus, List<Terrorist> listOfTerrorists)
         {
             DateOfEstablishment = dateOfEstablishment;
             CurrentCensus = currentCensus;
