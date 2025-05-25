@@ -6,9 +6,9 @@ using System.Threading.Tasks;
 
 namespace IDFOpertion.Models
 {
-    public class TerroristList
+    public static class TerroristList
     {
-        public List<Terrorist> terrorists = new List<Terrorist>() 
+        public static List<Terrorist> terrorists = new List<Terrorist>()
         {
             new Terrorist("muhamad", 1, "alive", ["gun"]),
             new Terrorist("ali", 2, "alive", ["gun", "knife"]),
@@ -17,9 +17,9 @@ namespace IDFOpertion.Models
     }
 
 
-    public class CombatToolsList
+    public static class CombatToolsList
     {
-        public List<object> wapens = new List<object>
+        public static List<object> wapens = new List<object>
         {
             new F16FighterJet(),
             new Hermes460Drone(),
@@ -27,9 +27,9 @@ namespace IDFOpertion.Models
         };
     }
 
-    public class Places
+    public static class Places
     {
-        public List<string> places = new List<string>
+        public static List<string> places = new List<string>
         {
             "han yunes",
             "gazza",
@@ -39,9 +39,15 @@ namespace IDFOpertion.Models
     }
 
 
+<<<<<<< HEAD
     public class Dates
     {
         public List<double> dates = new List<double>
+=======
+    public static class Dates
+    {
+        public static List<double> dates = new List<double>
+>>>>>>> ca611047aad0f6640e285cae33326bbacb43ed26
         {
             2024,
             2023,
@@ -51,6 +57,53 @@ namespace IDFOpertion.Models
             2008,
             2007,
             2006
+        };
+    }
+
+
+    public static class IntelligenceMessages
+    {
+        public static List<string> intelligenceMessages = new List<string>
+        {
+            "A lone terrorist was spotted placing an IED near Route 443.",
+
+            "One armed militant attempted to breach the southern checkpoint on foot.",
+
+            "A single hostile opened fire on an IDF jeep near Sector B.",
+
+            "One suspect carrying explosives was neutralized outside the base perimeter.",
+
+            "A terrorist disguised as a farmer was caught surveying troop movements.",
+
+            "A lone shooter targeted the watchtower at 0400 hours before fleeing.",
+
+            "A single militant was observed marking IDF vehicle positions with laser guidance.",
+
+            "A terrorist attempted to smuggle a handgun through civilian access route 7.",
+
+            "One individual was detected cutting through the border fence with bolt cutters.",
+
+            "A single operative launched a short-range rocket from an improvised platform.",
+
+            "A hostile on a motorbike threw an incendiary device at a patrol unit.",
+
+            "A lone infiltrator was seen planting surveillance equipment near the outpost.",
+
+            "One terrorist attempted to enter the base posing as humanitarian aid.",
+
+            "A single sniper fired at the forward observation post before escaping into the hills.",
+
+            "A militant was caught trying to ignite a fuel tank inside a logistics vehicle.",
+
+            "A lone attacker approached the gate with a concealed explosive vest.",
+
+            "One hostile individual attempted to disable communications wiring near HQ.",
+
+            "A terrorist armed with a knife breached the outer wall but was subdued.",
+
+            "A militant dropped propaganda leaflets inside the buffer zone before fleeing.",
+
+            "A suspect was observed photographing sensitive infrastructure using a high-zoom lens."
         };
     }
 
