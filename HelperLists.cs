@@ -39,9 +39,9 @@ namespace IDFOpertion.Models
     }
 
 
-    public class DateTime
+    public class Dates
     {
-        public List<double> dateTime = new List<double>
+        public List<double> dates = new List<double>
         {
             2024,
             2023,
