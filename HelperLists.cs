@@ -39,15 +39,10 @@ namespace IDFOpertion.Models
     }
 
 
-<<<<<<< HEAD
-    public class Dates
-    {
-        public List<double> dates = new List<double>
-=======
+
     public static class Dates
     {
         public static List<double> dates = new List<double>
->>>>>>> ca611047aad0f6640e285cae33326bbacb43ed26
         {
             2024,
             2023,
