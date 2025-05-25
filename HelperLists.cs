@@ -6,9 +6,9 @@ using System.Threading.Tasks;
 
 namespace IDFOpertion.Models
 {
-    public class TerroristList
+    public static class TerroristList
     {
-        public List<Terrorist> terrorists = new List<Terrorist>()
+        public static List<Terrorist> terrorists = new List<Terrorist>()
         {
             new Terrorist("muhamad", 1, "alive", ["gun"]),
             new Terrorist("ali", 2, "alive", ["gun", "knife"]),
@@ -17,9 +17,9 @@ namespace IDFOpertion.Models
     }
 
 
-    public class CombatToolsList
+    public static class CombatToolsList
     {
-        public List<object> wapens = new List<object>
+        public static List<object> wapens = new List<object>
         {
             new F16FighterJet(),
             new Hermes460Drone(),
@@ -27,9 +27,9 @@ namespace IDFOpertion.Models
         };
     }
 
-    public class Places
+    public static class Places
     {
-        public List<string> places = new List<string>
+        public static List<string> places = new List<string>
         {
             "han yunes",
             "gazza",
@@ -39,9 +39,9 @@ namespace IDFOpertion.Models
     }
 
 
-    public class Dates
+    public static class Dates
     {
-        public List<double> dates = new List<double>
+        public static List<double> dates = new List<double>
         {
             2024,
             2023,
@@ -55,9 +55,9 @@ namespace IDFOpertion.Models
     }
 
 
-    public class IntelligenceMessages
+    public static class IntelligenceMessages
     {
-        public List<string> intelligenceMessages = new List<string>
+        public static List<string> intelligenceMessages = new List<string>
         {
             "A lone terrorist was spotted placing an IED near Route 443.",
 
