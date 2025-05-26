@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace IDFOpertion.Models
 {
-    public static class TerroristList
+    public static class HelperLists
     {
         public static List<Terrorist> terrorists = new List<Terrorist>()
         {
@@ -14,21 +14,19 @@ namespace IDFOpertion.Models
             new Terrorist("ali", 2, "alive", ["gun", "knife"]),
             new Terrorist("yusuf", 3, "alive", ["gun", "shotgun"])
         };
-    }
 
 
-    public static class CombatToolsList
-    {
-        public static List<object> wapens = new List<object>
+
+
+        public static List<CombatTool> wapens = new List<CombatTool>
         {
             new F16FighterJet(),
             new Hermes460Drone(),
             new Artillery()
         };
-    }
 
-    public static class Places
-    {
+
+
         public static List<string> places = new List<string>
         {
             "han yunes",
@@ -36,12 +34,9 @@ namespace IDFOpertion.Models
             "yosh",
             "levanon"
         };
-    }
 
 
 
-    public static class Dates
-    {
         public static List<double> dates = new List<double>
         {
             2024,
@@ -53,11 +48,10 @@ namespace IDFOpertion.Models
             2007,
             2006
         };
-    }
 
 
-    public static class IntelligenceMessages
-    {
+
+
         public static List<string> intelligenceMessages = new List<string>
         {
             "A lone terrorist was spotted placing an IED near Route 443.",
@@ -100,6 +94,7 @@ namespace IDFOpertion.Models
 
             "A suspect was observed photographing sensitive infrastructure using a high-zoom lens."
         };
-    }
 
+
+    }
 }
