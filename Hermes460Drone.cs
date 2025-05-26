@@ -12,6 +12,7 @@ namespace IDFOpertion.Models
 
         public Hermes460Drone()
         {
+            ToolType = "Hermes 460 drone";
             TypeBomb = "drone bomb";
             EffectiveAgainst = "people, armored vehicles";
             AvailableAttacks = 3;

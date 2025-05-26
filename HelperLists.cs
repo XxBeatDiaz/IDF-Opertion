@@ -19,7 +19,7 @@ namespace IDFOpertion.Models
 
     public static class CombatToolsList
     {
-        public static List<object> wapens = new List<object>
+        public static List<CombatTool> wapens = new List<CombatTool>
         {
             new F16FighterJet(),
             new Hermes460Drone(),

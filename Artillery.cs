@@ -14,6 +14,7 @@ namespace IDFOpertion.Models
 
         public Artillery()
         {
+            ToolType = "Artillery";
             TypeBomb = "Explosive shellsb";
             EffectiveAgainst = "Open spaces";
             AvailableAttacks = 40;
