@@ -7,11 +7,8 @@ namespace IDFOpertion
     {
         static void Main(string[] args)
         {
-<<<<<<< HEAD
-       
-=======
-            
->>>>>>> 0ce9d4b4e3f62a5387fb41121bbe0af08065d150
+            AMAN a = new AMAN(TerroristList.terrorists, Places.places, Dates.dates);
+            a.Display();
         }
     }
 }
