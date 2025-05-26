@@ -12,6 +12,7 @@ namespace IDFOpertion.Models
         string PilotOperated;
         public F16FighterJet() 
         {
+            ToolType = "F16 Fighter Jet";
             TypeBomb = "Fighter bomb";
             EffectiveAgainst = "Biuldings";
             PilotOperated = "Pilot operated";
