@@ -7,7 +7,8 @@ namespace IDFOpertion
     {
         static void Main(string[] args)
         {
-            
+            AMAN a = new AMAN(TerroristList.terrorists, Places.places, Dates.dates);
+            a.Display();
         }
     }
 }

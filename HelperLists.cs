@@ -37,7 +37,6 @@ namespace IDFOpertion.Models
 
 
 
-
         public static List<double> dates = new List<double>
         {
             2024,
