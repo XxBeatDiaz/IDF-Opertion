@@ -11,13 +11,24 @@ namespace IDFOpertion.Models
     {
         protected int DateOfEstablishment;
         protected string CurrentCensus;
-        public List<object> CollectionOfAttackOptions;
+        public List<CombatTool> CollectionOfAttackOptions;
 
-        public IDF(int dateOfEstablishment, string currentCensus, List<object> collectionOfAttackOptions)
+        public IDF(int dateOfEstablishment, string currentCensus, List<CombatTool> collectionOfAttackOptions)
         {
             DateOfEstablishment = dateOfEstablishment;
             CurrentCensus = currentCensus;
             CollectionOfAttackOptions = collectionOfAttackOptions;
+        }
+
+
+        public void CombatToolsAvailable()
+        {
+            foreach (CombatTool tool in CollectionOfAttackOptions)
+            {
+                Console.WriteLine($"{tool.ToolType}: {tool.CappasityAmmu()} {tool.TypeBomb}");
+            }
+
+
         }
 
     }
