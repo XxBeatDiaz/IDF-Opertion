@@ -7,7 +7,7 @@ namespace IDFOpertion
     {
         static void Main(string[] args)
         {
-
+            
         }
     }
 }
