@@ -12,7 +12,9 @@ namespace IDFOpertion.Models
         {
             new Terrorist("muhamad", 1, "alive", ["gun"]),
             new Terrorist("ali", 2, "alive", ["gun", "knife"]),
-            new Terrorist("yusuf", 3, "alive", ["gun", "shotgun"])
+            new Terrorist("yusuf", 3, "alive", ["gun", "M16"]),
+            new Terrorist("Mostafa", 4, "alive", ["gun", "AK47"]),
+            new Terrorist("yusuf", 5, "alive", ["knife", "M16"])
         };
 
 
