@@ -1,4 +1,4 @@
-﻿using IDFOpertion.Models;
+﻿using IDFOpertion.Abstract;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -6,7 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace IDFOpertion.Models
+namespace IDFOpertion.Weapons
 {
     public class Artillery : CombatTool
     {

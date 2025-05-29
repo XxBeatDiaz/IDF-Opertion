@@ -10,14 +10,13 @@ namespace IDFOpertion.Models
     {
         public string Name;
         public int Rank;
-        public string LifeStatus;
-        public string[] Weapon;
+        public string LifeStatus = "alive";
+        public List<string> Weapon;
 
-        public Terrorist(string name, int rank, string lifeStatus, string[] weapon)
+        public Terrorist(string name, int rank, List<string> weapon)
         {
             Name = name;
             Rank = rank;
-            LifeStatus = lifeStatus;
             Weapon = weapon;
         }
     }

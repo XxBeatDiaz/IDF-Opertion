@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using IDFOpertion.Models;
+using IDFOpertion.Abstract;
 
-namespace IDFOpertion.Models
+namespace IDFOpertion.Weapons
 {
     public class F16FighterJet : CombatTool
     {

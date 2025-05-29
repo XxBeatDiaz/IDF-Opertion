@@ -1,0 +1,8 @@
+{
+  "profiles": {
+    "IDFOpertion": {
+      "commandName": "Project",
+      "commandLineArgs": "curl \"https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=GEMINI_API_KEY\" \\\r\n  -H 'Content-Type: application/json' \\\r\n  -X POST \\\r\n  -d '{\r\n    \"contents\": [\r\n      {\r\n        \"parts\": [\r\n          {\r\n            \"text\": \"Explain how AI works in a few words\"\r\n          }\r\n        ]\r\n      }\r\n    ]\r\n  }'"
+    }
+  }
+}

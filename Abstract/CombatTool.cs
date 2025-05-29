@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace IDFOpertion.Models
+namespace IDFOpertion.Abstract
 {
     public abstract class CombatTool
     {
@@ -16,7 +16,7 @@ namespace IDFOpertion.Models
 
         public bool IsEmptyAmmu()
         {
-            return AvailableAttacks > 0;
+            return AvailableAttacks == 0;
         }
         public bool Attack()
         {
