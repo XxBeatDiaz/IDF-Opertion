@@ -123,7 +123,7 @@ namespace IDFOpertion.Organizations
                 $"Name: {terrorist.Name}. \n" +
                 $"Rank {terrorist.Rank}. \n" +
                 $"Quality score: {maxQualityScore}. \n" +
-                $"Last location: ");
+                $"Last location: {Terrorists[terrorist].Item3}");
             if (terrorist.Weapon.Count > 1)
             {
                 Console.Write("Weapons: ");
