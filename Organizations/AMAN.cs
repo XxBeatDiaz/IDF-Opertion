@@ -21,7 +21,7 @@ namespace IDFOpertion.Organizations
         {
             foreach (Terrorist terrorist in terroristList)
             {
-                Terrorists[terrorist] = (GetReports(), GetQualityScore(terrorist), GetLocation(), GetDateTime(new DateTime(2000, 1, 1), DateTime.Now));
+                Terrorists[terrorist] = (GetReports(), GetQualityScore(terrorist), GetLocation(), GetDateTime(new DateTime(2025, 5, 1), DateTime.Now));
             }
         }
 
@@ -126,14 +126,17 @@ namespace IDFOpertion.Organizations
             {
                 if (trs.Key.Id == terroristId)
                 {
-                    Terrorist terrorist = trs.Key;
-                    terrorist.LifeStatus = "dead";
-                    var data = trs.Value;
-                    Terrorists.Remove(trs.Key);
-                    Terrorists.Add(terrorist, data);
-                    break;
+                    if (trs.Key.IsAliive())
+                    {
+                        Terrorist terrorist = trs.Key;
+                        terrorist.LifeStatus = "dead";
+                        var data = trs.Value;
+                        Terrorists.Remove(trs.Key);
+                        Terrorists.Add(terrorist, data);
+                        break;
+                    }
+                    
                 }
-
             }
         }
 

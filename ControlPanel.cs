@@ -63,14 +63,15 @@ namespace IDFOpertion.Models
                             int terroristAttack = int.Parse(Console.ReadLine()!);
                             if (terroristAttack == 1)
                                 deatTerroristId = idf.Attack(aman.GetTerroristDict() ,mostReportsTerroristId);
-
+                                
                             else if (terroristAttack == 2)
                                 deatTerroristId = idf.Attack(aman.GetTerroristDict(), mostDangerousTerroristId);
-
-                            aman.UpsateTerrorist(deatTerroristId);
+                            if (terroristAttack != 0)
+                                aman.UpsateTerrorist(deatTerroristId);
                         }
                         break;
                     case 6:
+                        Console.WriteLine("Have a good day.");
                         exit = true;
                         break;
                     default:

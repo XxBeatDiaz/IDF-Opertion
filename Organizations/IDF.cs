@@ -77,16 +77,23 @@ namespace IDFOpertion.Organizations
                 {
                     if (terrorist.Key.Id == terroristId)
                     {
+                        if (terrorist.Key.IsAliive())
+                        {
                         string location = terrorist.Value.Item3;
                         combatTool = GetTool(location);
-                        if (combatTool is null)
-                            break;
+                            if (combatTool is not null)
+                            {
+                                combatTool.Attack(terrorist.Key.Name);
+                                break;
+                            }
+                        }
                         else
-                            combatTool.Attack(terrorist.Key.Name);
-                        break;
+                        {
+                            Console.WriteLine($"The terrorist {terrorist.Key.Name} is already dead.");
+                            terroristId = 0;
+                            break;
+                        }
                     }
-                    else
-                        Console.WriteLine($"The terrorist {terrorist.Key.Name} is already dead.");
                 }
             }
             return terroristId;
