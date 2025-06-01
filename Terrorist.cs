@@ -12,12 +12,22 @@ namespace IDFOpertion.Models
         public int Rank;
         public string LifeStatus = "alive";
         public List<string> Weapon;
+        public int Id;
 
-        public Terrorist(string name, int rank, List<string> weapon)
+        public Terrorist(string name, int id, int rank, List<string> weapon)
         {
             Name = name;
+            Id = id;
             Rank = rank;
             Weapon = weapon;
+        }
+
+        public bool IsAliive()
+        {
+            if (LifeStatus == "alive")
+                return true;
+            else
+                return false;
         }
     }
 }

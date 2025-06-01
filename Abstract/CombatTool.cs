@@ -18,20 +18,12 @@ namespace IDFOpertion.Abstract
         {
             return AvailableAttacks == 0;
         }
-        public bool Attack()
+        public void Attack(string nameTerrorist)
         {
-            if (IsEmptyAmmu())
-            {
-                Console.WriteLine($"Ammu cappssity is empty");
-                return false;
-            }
-            else
-            {
-                AvailableAttacks--;
-                Console.WriteLine($"success! \n" +
-                                  $"Cappasity ammu: {CappasityAmmu()}");
-                return true;
-            }
+            AvailableAttacks--;
+            Console.WriteLine($"success! \n" +
+                              $"{ToolType} attack whith {TypeBomb} the terrorist {nameTerrorist}! \n" +
+                              $"Cappasity ammu: {CappasityAmmu()}\n");
         }
         public int CappasityAmmu()
         {
