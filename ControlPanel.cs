@@ -13,8 +13,10 @@ namespace IDFOpertion.Models
     {
         public static void Menu()
         {
-            List<Terrorist> terrorists = TerroristFactory.terrorists(10);
-
+            List<Terrorist> terrorists = TerroristFactory.terrorists(4);
+            int mostReportsTerroristId = 0;
+            int mostDangerousTerroristId = 0;
+            int deatTerroristId = 0;
 
             AMAN aman = new AMAN(terrorists);
             IDF idf = new IDF(2000, "Eyal Zamir", WeaponsIdfFactoru.FirstInit());
@@ -27,27 +29,48 @@ namespace IDFOpertion.Models
             {
                 Console.WriteLine("\n" +
                     "What action do you want to perform? \n" +
-                    "1. Intelligence analysis \n" +
-                    "2. Attack availability \n" +
-                    "3. Prioritizing goals \n" +
-                    "4. Attack \n" +
-                    "5. Exit \n");
+                    "1. List of terrorists \n" +
+                    "2. Most reports terrorist \n" +
+                    "3. Most dangerous terrorist \n" +
+                    "4. Attack availability \n" +
+                    "5. Attack \n" +
+                    "6. Exit \n");
                 int choosing = int.Parse(Console.ReadLine()!);
 
                 switch (choosing)
                 {
                     case 1:
-                        aman.MostReportsTerrorist();
+                        aman.PrintTerroristsTable();
                         break;
                     case 2:
-                        idf.CombatToolsAvailable();
+                        mostReportsTerroristId = aman.MostReportsTerrorist();
                         break;
                     case 3:
-                        Terrorist mostDangerousTerrorist = aman.MostDangerousTerrorist();
+                        mostDangerousTerroristId = aman.MostDangerousTerrorist();
                         break;
                     case 4:
+                        idf.CombatToolsAvailable();
                         break;
                     case 5:
+                        if (mostReportsTerroristId == 0 &&
+                            mostDangerousTerroristId == 0)
+                            Console.WriteLine("No terrorist was selected.");
+                        else
+                        {
+                            Console.WriteLine("Which terrorists to kill? \n" +
+                            "1. Most reports terrorist \n" +
+                            "2. Most dangerous terrorist");
+                            int terroristAttack = int.Parse(Console.ReadLine()!);
+                            if (terroristAttack == 1)
+                                deatTerroristId = idf.Attack(aman.GetTerroristDict() ,mostReportsTerroristId);
+
+                            else if (terroristAttack == 2)
+                                deatTerroristId = idf.Attack(aman.GetTerroristDict(), mostDangerousTerroristId);
+
+                            aman.UpsateTerrorist(deatTerroristId);
+                        }
+                        break;
+                    case 6:
                         exit = true;
                         break;
                     default:

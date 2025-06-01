@@ -62,7 +62,7 @@ namespace IDFOpertion.Organizations
         private string GetLocation()
         {
             List<string> Locations = new List<string> { "at home", "outside", "in the car" };
-            return Locations[random.Next(0, Locations.Count)];
+            return Locations[random.Next(Locations.Count)];
         }
 
 
@@ -76,67 +76,128 @@ namespace IDFOpertion.Organizations
         }
 
 
-        private void PrintWeapons(List<string> weapons)
+        public Dictionary<Terrorist, (int, int, string, DateTime)> GetTerroristDict()
         {
-            string str = "";
-            foreach (string weapon in weapons)
-            {
-                str += weapon + " ";
-            }
-            Console.WriteLine(str);
+            return Terrorists;
         }
 
-
-        public Terrorist MostReportsTerrorist()
+        public void PrintTerroristsTable()
         {
-            Terrorist terrorist = null; 
-            int maxReports = 0;
+            int columnWidth = 16;
 
+            string Pad(string text) => text.PadRight(columnWidth);
+
+            Console.WriteLine(
+                Pad("Name") +
+                Pad("Rank") +
+                Pad("LifeStatus") +
+                Pad("LastLocation") +
+                Pad("Reports") +
+                Pad("QualityScore") +
+                Pad("LastSeen") +
+                Pad("Weapons")
+            );
+
+            Console.WriteLine(new string('-', columnWidth * 8));
+
+            foreach (var kvp in Terrorists)
+            {
+                var terrorist = kvp.Key;
+                var data = kvp.Value;
+
+                string weapons = string.Join(", ", terrorist.Weapon) + ".";
+
+                Console.WriteLine(
+                    Pad(terrorist.Name) +
+                    Pad(terrorist.Rank.ToString()) +
+                    Pad(terrorist.LifeStatus) +
+                    Pad(data.Item3) +
+                    Pad(data.Item1.ToString()) +
+                    Pad(data.Item2.ToString()) +
+                    Pad(data.Item4.ToShortDateString()) +
+                    Pad(weapons)
+                );
+            }
+        }
+
+        public void UpsateTerrorist(int terroristId)
+        {
             foreach (var trs in Terrorists)
             {
-                if (trs.Value.Item1 > maxReports)
+                if (trs.Key.Id == terroristId)
                 {
-                    maxReports = trs.Value.Item1;
-                    terrorist = trs.Key;
+                    Terrorist terrorist = trs.Key;
+                    terrorist.LifeStatus = "dead";
+                    var data = trs.Value;
+                    Terrorists.Remove(trs.Key);
+                    Terrorists.Add(terrorist, data);
+                    break;
                 }
+
             }
-            Console.WriteLine($"The terrorist: {terrorist.Name}, have {maxReports} reports.");
-            return terrorist;
         }
 
-        
-        public Terrorist MostDangerousTerrorist()
+        public int MostReportsTerrorist()
         {
-            Terrorist terrorist = null;
+            int terroristId = 0;
+            string terroristName = null;
+            int maxReports = 0;
+
+            foreach (var terrorist in Terrorists)
+            {
+                if (terrorist.Value.Item1 > maxReports &&
+                    terrorist.Key.IsAliive())
+                {
+                    maxReports = terrorist.Value.Item1;
+                    terroristName = terrorist.Key.Name;
+                    terroristId = terrorist.Key.Id;
+                }
+            }
+            if (terroristId != 0)
+                Console.WriteLine($"The terrorist: {terroristName}, have {maxReports} reports.");
+            else
+                Console.WriteLine("All terrorists are dead.");
+            return terroristId;
+
+        }
+
+
+        public int MostDangerousTerrorist()
+        {
+            int terroristId = 0;
+            Dictionary<Terrorist, (int, int, string, DateTime)> terrorist = new Dictionary<Terrorist, (int reportsCount, int qualityScore, string lastKnownLocation, DateTime lastDateTime)>();
+            Terrorist terroristInfo = null;
             int maxQualityScore = 0;
 
             foreach (var trs in Terrorists)
             {
-                if (trs.Value.Item2 > maxQualityScore)
+                if (trs.Value.Item2 > maxQualityScore &&
+                    trs.Key.IsAliive())
                 {
                     maxQualityScore = trs.Value.Item2;
-                    terrorist = trs.Key;
+                    terrorist[trs.Key] = trs.Value;
+                    terroristInfo = trs.Key;
                 }
             }
 
-            Console.WriteLine($"The most dangerous terrorist is: \n" +
-                $"Name: {terrorist.Name}. \n" +
-                $"Rank {terrorist.Rank}. \n" +
-                $"Quality score: {maxQualityScore}. \n" +
-                $"Last location: {Terrorists[terrorist].Item3}");
-            if (terrorist.Weapon.Count > 1)
+            if (terroristId != 0)
             {
-                Console.Write("Weapons: ");
-                PrintWeapons(terrorist.Weapon);
+                Console.WriteLine($"The most dangerous terrorist is: \n" +
+                $"Name: {terroristInfo.Name}. \n" +
+                $"Rank {terroristInfo.Rank}. \n" +
+                $"Quality score: {maxQualityScore}. \n" +
+                $"Last location: {Terrorists[terroristInfo].Item3}");
+                if (terroristInfo.Weapon.Count > 1)
+                {
+                    Console.WriteLine($"Weapons: {string.Join(", ", terroristInfo.Weapon)}.");
+                }
+                else
+                    Console.WriteLine($"Weapon: {terroristInfo.Weapon[0]}");
             }
             else
-            {
-                Console.Write("Weapon: ");
-                PrintWeapons(terrorist.Weapon);
-            }
+                Console.WriteLine("All terrorists are dead.");
 
-            return terrorist;
+            return terroristId;
         }
-       
     }
 }
