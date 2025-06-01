@@ -177,6 +177,7 @@ namespace IDFOpertion.Organizations
                     maxQualityScore = trs.Value.Item2;
                     terrorist[trs.Key] = trs.Value;
                     terroristInfo = trs.Key;
+                    terroristId = trs.Key.Id;
                 }
             }
 
